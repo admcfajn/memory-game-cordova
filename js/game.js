@@ -21,7 +21,7 @@ app = {
       var dt2 = new Date(dt.valueOf() + 1000);
       var ts = dt2.toTimeString().split(' ')[0];
       timer.innerHTML = ts;
-      window.timerTimeout = setTimeout(this.updateTimer, 1000);
+      document.timerTimeout = setTimeout(app.updateTimer, 1000);
   },
 
   inputParamsChanged: function(){
@@ -232,9 +232,9 @@ app = {
   },
 
   resetTimer: function(){
-    window.clearTimeout(timerTimeout);
+    document.clearTimeout(timerTimeout);
     document.getElementById('timer').innerHTML = '00:00:00';
-    window.timerTimeout = setTimeout(app.updateTimer, 1000);
+    document.timerTimeout = setTimeout(app.updateTimer, 1000);
   },
 
   plot: function(container, cellswide, cellshigh, num_variants, num_each_variant){
