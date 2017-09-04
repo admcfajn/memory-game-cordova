@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        <title>Memory Game - Matching/Sequencing/Pattern-Recognition Game</title>
+        <!-- 2016-2017 Adam McFadyen / dabzo Interaction dabzo.com -->
+        <link rel=stylesheet type=text/css href=css/style.css?ver=1.1.0>
+    </head>
+
+
+    <body><!-- initialize -->
+      <div id="matching_game">
+      <div id="config_container">
+        <div id="config">
+
+          <form id=game_vals>
+            <ul>
+              <li>
+                <label id="difficulty_label">
+                <strong>D</strong>ifficulty:
+                </label>
+                <select id="difficulty" name="difficulty" />
+                <select>
+              </li>
+              <li>
+                <label><strong>M</strong>emory<br> <strong>G</strong>ame
+                </label>
+              </li>
+              </li>
+              <li>
+                <label id="timer_label">
+                <strong>T</strong>imer:
+                </label>
+                <span id="timer">00:00:00</span>
+              </li>
+            </ul>
+          </form>
+
+        </div>
+        <div id="validation_notification"></div>
+        <div id=output_container>
+          <div id=output></div>
+        </div>
+      </div>
+      <!-- <span id="hide_config">Hide / Show Config</span> -->
+      <div id="main">
+        <div id="container_wrapper" class="container_wrapper"></div>
+      </div>
+
+      </div>
+
+      <div id=supplementary>
+        <div class=content-inner>
+          <h1>Memory, Matching, Sequencing Game</h1>
+          <p>A timed matching, sequencing, pattern-recognition game.</p>
+          <h2>Rules</h2>
+          <ul>
+          <li>Don't click the same cell twice.</li>
+          <li>Click all cells of one type before clicking a cell with different type.</li>
+          </ul>
+
+          <p>The goal is to match similar cells on a grid.</p>
+          <p>Click all cells of the same type to win. Without clicking the same cell twice.</p>
+          <p>After clicking all cells of the same type: Begin a new type.</p>
+
+          <h2>How to Win</h2>
+          <p>Click the cells in the correct order; Don't click the same cell twice.</p>
+          <ul>
+          <li>Click every cell of the same type. Without clicking the same cell twice.</li>
+          <li>After clicking every cell of the same type, click a different type and continue</li>
+          <li>After clicking every cell in the game-area, clicking all similar cells sequentially, without clicking the same cell twice: <strong>Y</strong>ou <strong>W</strong>in!</li>
+          <li>Try again with more cells</li>
+          </ul>
+
+          <p style=text-align:center><a title="Memory Game Open Source on GitHub" href=https://github.com/dabzo/memory-game target=_blank>Memory Game Open Source Repo</a> &copy; <a href=http://dabzo.com target=_blank>Adam McFadyen 2016 - dabzo Interaction</a>
+        </div>
+        <!--
+        <div class=content-inner>
+        <h2>High Scores</h2>
+        <ul>
+        <li>if scores player-ip</li>
+        </ul>
+        </div>
+        -->
+      </div>
+
+        <div class="app" style="display:none;">
+            <h1>Apache there</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/ux.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="js/game.js?ver=1.1.0"></script>
+
+    </body>
+</html>
